@@ -1,0 +1,5 @@
+<p *ngIf="isEmpty; else isFilled">Le panier est vide</p>
+<ng-template #isFilled>Articles contenus dans le panier :</ng-template>
+<p *ngFor="let p of cartContent | async">
+    - {{p.name}} <button (click)="deleteFromCart(p)">Supprimer du panier</button>
+</p>

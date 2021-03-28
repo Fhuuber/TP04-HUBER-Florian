@@ -1,0 +1,9 @@
+<div *ngFor="let p of products" class="products">
+    <div class="product">
+        <h1>{{p.name}} ({{p.price}}€)</h1>
+        <h3>{{p.detail}}</h3>
+        <router-outlet></router-outlet>
+        <button [routerLink]="['/products',p.name,'detail']">Voir le détail</button>
+        <button (click)="addToCart(p)">Ajouter au panier</button>
+    </div>
+</div>
